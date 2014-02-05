@@ -45,6 +45,11 @@ class FancyText:
 
         for i in text:
             chrnum = ord(i)
+
+            if chrnum == 32:
+                translated += ' '
+                continue
+
             if i.isdigit():
                 offset = chrnum - 48
                 charset = 2
