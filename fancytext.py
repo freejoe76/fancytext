@@ -11,7 +11,7 @@ class FancyText:
         𝚃𝙴𝚂𝚃
         """
 
-    def __init__(self, font):
+    def __init__(self, font='monospace'):
         """ Translation matrix via Moses Moore (https://github.com/mozai/), http://mozai.com/programming/dandytype.html
             """
         self.translation = {
@@ -61,9 +61,12 @@ class FancyText:
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option("-f", "--font", dest="font", default="monospace")
+    parser.add_option("-f", "--font", dest="font")
     (options, args) = parser.parse_args()
 
-    u = FancyText(options.font)
+    if options.font:
+        u = FancyText(options.font)
+    else:
+        u = FancyText()
     for arg in args:
         print u.translate(arg), 
