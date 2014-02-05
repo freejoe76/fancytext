@@ -1,5 +1,5 @@
 # FancyText
-𝗧𝘂𝗿𝗻 𝘆𝗼𝘂𝗿 𝗮𝘀𝗰𝗶𝗶 𝘁𝗲𝘅𝘁 𝗶𝗻𝘁𝗼 𝗮 𝗳𝗮𝗻𝗰𝘆 𝗳𝗼𝗻𝘁.
+𝗧𝘂𝗿𝗻 𝘆𝗼𝘂𝗿 𝗮𝘀𝗰𝗶𝗶 𝘁𝗲𝘅𝘁 𝗶𝗻𝘁𝗼 𝗮 𝗳𝗮𝗻𝗰𝘆 ⓕⓞⓝⓣ.
 
 # Credits
 Translation matrix via [Moses Moore](https://github.com/mozai/). [View his web-facing character translator here](http://mozai.com/programming/dandytype.html).
