@@ -5,9 +5,11 @@ Turn your ascii text into a fancy font.
 ```
 # Basic:
 ./fancytext.py Hey Fancy
+𝙷𝚎𝚢 𝙵𝚊𝚗𝚌𝚢
 
 # Choose a font:
 ./fancytext.py --font circled now you have circles
+ⓝⓞⓦ ⓨⓞⓤ ⓗⓐⓥⓔ ⓒⓘⓡⓒⓛⓔⓢ
 ```
 
 Current font options:
