@@ -4,6 +4,14 @@ from __future__ import unicode_literals
 import pytest
 from fancytext.fancytext import FancyText
 
+def test_punctuation():
+    u = FancyText('monospace')
+    assert u.translate('TEST.-@*') == '𝚃𝙴𝚂𝚃.-@*'
+
+def test_nofont():
+    u = FancyText('hahahahaha')
+    assert u.translate('TEST') == False
+
 def test_letters():
     u = FancyText('monospace')
     assert u.translate('TEST') == '𝚃𝙴𝚂𝚃'
