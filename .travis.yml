@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 language: python
 python:
   - "2.6"
@@ -6,5 +10,4 @@ python:
 install:
   - pip install .
 # command to run tests
-script: nosetests 
-script: make test
+script: pytest
