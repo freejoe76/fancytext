@@ -11,3 +11,7 @@ def test_letters():
 def test_numbers():
     u = FancyText('monospace')
     assert u.translate('12345') == '𝟷𝟸𝟹𝟺𝟻'
+
+def test_letters_numbers_and_space():
+    u = FancyText('monospace')
+    assert u.translate('123 45 TEST') == '𝟷𝟸𝟹 𝟺𝟻 𝚃𝙴𝚂𝚃'
