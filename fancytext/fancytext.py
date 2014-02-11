@@ -46,11 +46,6 @@ class FancyText:
         for i in text:
             chrnum = ord(i)
 
-            # The spacebar exception.
-            if chrnum == 32:
-                translated += ' '
-                continue
-
             # Non-letter exceptions
             if chrnum < 48 or 57 < chrnum < 65 or 90 < chrnum < 97 or 122 < chrnum:
                 translated += i
