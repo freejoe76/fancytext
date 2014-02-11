@@ -36,8 +36,7 @@ class FancyText:
         self.font = font
 
     def translate(self, text):
-        """ First draft of a method to turn letters into monospace letters.
-            What about other fonts? What about non-letter characters? That's later.
+        """ First draft of a method to convert letters into unicode equivalents.
             """
         translated = ''
         if self.font not in self.translation:
