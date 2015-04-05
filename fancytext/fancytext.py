@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from optparse import OptionParser
+import struct
 
 
 class FancyText:
@@ -66,7 +67,13 @@ class FancyText:
                 offset = chrnum - 65
                 charset = 0
 
-            translated += unichr(self.translation[self.font][charset][1] + offset)
+            try:
+                translated += unichr(self.translation[self.font][charset][1] + offset)
+            except:
+                i = self.translation[self.font][charset][1] + offset
+                s = "\\U%08x" % i
+                translated += s.decode('unicode-escape')
+                
 
         return translated
 
