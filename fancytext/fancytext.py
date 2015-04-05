@@ -36,7 +36,8 @@ class FancyText:
         self.font = font
 
     def translate(self, text):
-        """ First draft of a method to convert letters into unicode equivalents.
+        """ First draft of a method to turn letters into monospace letters.
+            What about other fonts? What about non-letter characters? That's later.
             """
         translated = ''
         if self.font not in self.translation:
@@ -44,6 +45,11 @@ class FancyText:
 
         for i in text:
             chrnum = ord(i)
+
+            # The spacebar exception.
+            if chrnum == 32:
+                translated += ' '
+                continue
 
             # Non-letter exceptions
             if chrnum < 48 or 57 < chrnum < 65 or 90 < chrnum < 97 or 122 < chrnum:
