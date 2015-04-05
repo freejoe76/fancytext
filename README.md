@@ -1,14 +1,16 @@
 # FancyText
 𝗧𝘂𝗿𝗻 𝘆𝗼𝘂𝗿 𝗮𝘀𝗰𝗶𝗶 𝘁𝗲𝘅𝘁 𝗶𝗻𝘁𝗼 𝗮 𝗳𝗮𝗻𝗰𝘆 ⓕⓞⓝⓣ.
 
+![FancyText Tests](https://api.travis-ci.org/freejoe76/fancytext.png)
+
 # Credits
 Translation matrix via [Moses Moore](https://github.com/mozai/). [View his web-facing character translator here](http://mozai.com/programming/dandytype.html).
 
 # Usage
 ```
 # Basic:
-./fancytext.py Hey Fancy
-𝙷𝚎𝚢 𝙵𝚊𝚗𝚌𝚢
+./fancytext.py HEY FANCY THIS IS MONOSPACED, RIGHT?
+𝙷𝙴𝚈 𝙵𝙰𝙽𝙲𝚈 𝚃𝙷𝙸𝚂 𝙸𝚂 𝙼𝙾𝙽𝙾𝚂𝙿𝙰𝙲𝙴𝙳, 𝚁𝙸𝙶𝙷𝚃?
 
 # Choose a font:
 ./fancytext.py --font circled now you have circles
