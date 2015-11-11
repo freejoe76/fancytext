@@ -80,7 +80,24 @@ class FancyText:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(usage='$ python fancytext.py',
-                                     description='',
+                                     description='''Change the font of your terminal text. Font options:
+ascii
+parens
+circled
+bold
+italic
+bolditalic
+script
+boldscript
+fraktur
+doublestruck
+boldfraktur
+sansserif
+sserifbold
+sserifitalic
+sserifboldi
+monospace
+fullwidth''',
                                      epilog='')
     parser.add_argument("-f", "--font", dest="font")
     parser.add_argument("words", action="append", nargs="*")
