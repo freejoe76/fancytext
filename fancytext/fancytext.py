@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from optparse import OptionParser
+import argparse
 import struct
+import doctest
 
 
 class FancyText:
@@ -78,13 +79,20 @@ class FancyText:
         return translated
 
 if __name__ == '__main__':
-    parser = OptionParser()
-    parser.add_option("-f", "--font", dest="font")
-    (options, args) = parser.parse_args()
+    parser = argparse.ArgumentParser(usage='$ python fancytext.py',
+                                     description='',
+                                     epilog='')
+    parser.add_argument("-f", "--font", dest="font")
+    parser.add_argument("words", action="append", nargs="*")
+    parser.add_argument("-v", "--verbose", dest="verbose", default=False, action="store_true")
+    args = parser.parse_args()
 
-    if options.font:
-        u = FancyText(options.font)
+    if args.verbose:
+        doctest.testmod(verbose=args.verbose)
+
+    if args.font:
+        u = FancyText(args.font)
     else:
         u = FancyText()
-    for arg in args:
+    for arg in args.words[0]:
         print u.translate(arg), 
