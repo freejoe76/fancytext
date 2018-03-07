@@ -9,7 +9,7 @@ import doctest
 class FancyText:
     """ Translate ascii to Unicode characters.
         >>> u = FancyText('monospace')
-        >>> print u.translate('TEST')
+        >>> print(u.translate('TEST'))
         𝚃𝙴𝚂𝚃
         """
 
@@ -79,7 +79,7 @@ class FancyText:
         return translated
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(usage='$ python fancytext.py',
+    parser = argparse.ArgumentParser(usage='$ python fancytext.py --font fraktur HI YOU',
                                      description='''Change the font of your terminal text. Font options:
 ascii
 parens
@@ -112,4 +112,4 @@ fullwidth''',
     else:
         u = FancyText()
     for arg in args.words[0]:
-        print u.translate(arg), 
+        print(u.translate(arg),)
