@@ -112,5 +112,7 @@ fullwidth''',
         u = FancyText(args.font)
     else:
         u = FancyText()
+    w = ''
     for arg in args.words[0]:
-        print(u.translate(arg),)
+        w += '%s ' % u.translate(arg)
+    print(w)
