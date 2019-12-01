@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import argparse
@@ -14,7 +14,8 @@ class FancyText:
         """
 
     def __init__(self, font='monospace'):
-        """ Translation matrix via Moses Moore (https://github.com/mozai/), http://mozai.com/programming/dandytype.html
+        """ Translation matrix via Moses Moore ( https://github.com/mozai/ ),
+            http://mozai.com/programming/dandytype.html
             """
         self.translation = {
             'ascii':[["!",33,"~"]],
@@ -69,7 +70,7 @@ class FancyText:
                 charset = 0
 
             try:
-                translated += unichr(self.translation[self.font][charset][1] + offset)
+                translated += chr(self.translation[self.font][charset][1] + offset)
             except:
                 i = self.translation[self.font][charset][1] + offset
                 s = "\\U%08x" % i

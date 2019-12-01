@@ -18,7 +18,7 @@ class PyTest(Command):
 
 setup(
     name='FancyText',
-    version='0.2',
+    version='0.3',
     description='Fancy up that terminal text.',
     license='Apache',
     url='https://github.com/freejoe76/fancytext',
