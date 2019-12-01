@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import argparse
@@ -9,12 +9,13 @@ import doctest
 class FancyText:
     """ Translate ascii to Unicode characters.
         >>> u = FancyText('monospace')
-        >>> print u.translate('TEST')
+        >>> print(u.translate('TEST'))
         𝚃𝙴𝚂𝚃
         """
 
     def __init__(self, font='monospace'):
-        """ Translation matrix via Moses Moore (https://github.com/mozai/), http://mozai.com/programming/dandytype.html
+        """ Translation matrix via Moses Moore ( https://github.com/mozai/ ),
+            http://mozai.com/programming/dandytype.html
             """
         self.translation = {
             'ascii':[["!",33,"~"]],
@@ -69,7 +70,7 @@ class FancyText:
                 charset = 0
 
             try:
-                translated += unichr(self.translation[self.font][charset][1] + offset)
+                translated += chr(self.translation[self.font][charset][1] + offset)
             except:
                 i = self.translation[self.font][charset][1] + offset
                 s = "\\U%08x" % i
@@ -79,7 +80,7 @@ class FancyText:
         return translated
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(usage='$ python fancytext.py',
+    parser = argparse.ArgumentParser(usage='$ python fancytext.py --font fraktur HI YOU',
                                      description='''Change the font of your terminal text. Font options:
 ascii
 parens
@@ -111,5 +112,7 @@ fullwidth''',
         u = FancyText(args.font)
     else:
         u = FancyText()
+    w = ''
     for arg in args.words[0]:
-        print u.translate(arg), 
+        w += '%s ' % u.translate(arg)
+    print(w)

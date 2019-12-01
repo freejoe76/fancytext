@@ -3,10 +3,10 @@
 
 ![FancyText Tests](https://api.travis-ci.org/freejoe76/fancytext.png)
 
-# Credits
+## Credits
 Translation matrix via [Moses Moore](https://github.com/mozai/). [View his web-facing character translator here](http://mozai.com/programming/dandytype.html).
 
-# Usage
+## Usage
 ```
 # Basic:
 ./fancytext.py HEY FANCY THIS IS MONOSPACED, RIGHT?
@@ -17,7 +17,16 @@ Translation matrix via [Moses Moore](https://github.com/mozai/). [View his web-f
 ⓝⓞⓦ ⓨⓞⓤ ⓗⓐⓥⓔ ⓒⓘⓡⓒⓛⓔⓢ
 ```
 
-Current font options:
+## Testing
+```
+python3 -m pytest
+```
+
+## Building
+
+https://setuptools.readthedocs.io/en/latest/setuptools.html#develop-deploy-the-project-source-in-development-mode
+
+## Font options:
 
 parens, circled, bold, italic, bolditalic, script, boldscript, fraktur, doublestruck, boldfraktur, sansserif, sserifbold, sserifitalic, sserifbold, sserifitalic, sserifboldi, monospace, fullwidth.
 ```
@@ -56,3 +65,4 @@ parens, circled, bold, italic, bolditalic, script, boldscript, fraktur, doublest
 ./fancytext.py --font monospace HEY this is monospace
 𝙷𝙴𝚈 𝚝𝚑𝚒𝚜 𝚒𝚜 𝚖𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎
 ```
+
