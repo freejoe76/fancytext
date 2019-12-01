@@ -22,6 +22,10 @@ Translation matrix via [Moses Moore](https://github.com/mozai/). [View his web-f
 python3 -m pytest
 ```
 
+## Building
+
+https://setuptools.readthedocs.io/en/latest/setuptools.html#develop-deploy-the-project-source-in-development-mode
+
 ## Font options:
 
 parens, circled, bold, italic, bolditalic, script, boldscript, fraktur, doublestruck, boldfraktur, sansserif, sserifbold, sserifitalic, sserifbold, sserifitalic, sserifboldi, monospace, fullwidth.
