@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+import sys
 import argparse
 import struct
 import doctest
@@ -79,7 +80,24 @@ class FancyText:
 
         return translated
 
-if __name__ == '__main__':
+def main(args):
+    """ Handle the command line.
+        """
+    if args.font:
+        u = FancyText(args.font)
+    else:
+        u = FancyText()
+    w = ''
+    for arg in args.words[0]:
+        w += '%s ' % u.translate(arg)
+    print(w)
+
+def build_parser(args):
+    """ Handle the argparse and make it testable.
+        >>> args = build_parser(['--verbose'])
+        >>> print(args.verbose)
+        True
+        """
     parser = argparse.ArgumentParser(usage='$ python fancytext.py --font fraktur HI YOU',
                                      description='''Change the font of your terminal text. Font options:
 ascii
@@ -103,16 +121,15 @@ fullwidth''',
     parser.add_argument("-f", "--font", dest="font")
     parser.add_argument("words", action="append", nargs="*")
     parser.add_argument("-v", "--verbose", dest="verbose", default=False, action="store_true")
-    args = parser.parse_args()
+    parser.add_argument('-t', '--test', dest='test', default=False, action='store_true')
+    #parser.add_argument('items', nargs='*', default=[1, 2, 3], help='')
+    args = parser.parse_args(args)
+    return args
 
-    if args.verbose:
+if __name__ == '__main__':
+    args = build_parser(sys.argv[1:])
+
+    if args.test == True:
         doctest.testmod(verbose=args.verbose)
 
-    if args.font:
-        u = FancyText(args.font)
-    else:
-        u = FancyText()
-    w = ''
-    for arg in args.words[0]:
-        w += '%s ' % u.translate(arg)
-    print(w)
+    main(args)
